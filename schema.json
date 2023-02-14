@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "required": [ "expected", "pattern" ],
+    "additionalProperties": false,
+    "properties": {
+        "allowNodeTypes": {
+            "description": "An array for excludes node type.\nIf the text is in the node type, suppress the error.\nhttps://github.com/textlint/textlint/blob/master/docs/txtnode.md#type\nFor example, if you want to ignore the text in block quote and link\n\"allowNodeTypes\": [\"Link\", \"BlockQuote\"]",
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "allows": {
+            "description": "An array of excludes pattern.\nIf the text is matched this pattern, suppress the error.\nYou can use RegExp-like string\nhttps://github.com/textlint/regexp-string-matcher#regexp-like-string",
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "expected": {
+            "description": "Replace string\nYou can use capture pattern like $1, $2. ($0 will be ignored)",
+            "type": "string"
+        },
+        "forceCode": {
+            "description": "This rule ignore Code and CodeBlock by default.\nIf you want to check the code, please put this true",
+            "type": "boolean"
+        },
+        "pattern": {
+            "anyOf": [
+                {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                {
+                    "type": "string"
+                }
+            ],
+            "description": "Match pattern string.\nYou can use RegExp-like string.\nhttps://github.com/textlint/regexp-string-matcher#regexp-like-string"
+        },
+        "regexpMustEmpty": {
+            "type": "string"
+        },
+        "specs": {
+            "items": {
+                "additionalProperties": false,
+                "properties": {
+                    "from": {
+                        "type": "string"
+                    },
+                    "to": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "suggest": {
+            "description": "This error message will be shown when match the pattern",
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+
