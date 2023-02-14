@@ -9,6 +9,10 @@
   "bugs": {
     "url": "https://github.com/orokasan/textlint-rule-standardizer/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orokasan/textlint-rule-standardizer.git"
+  },
   "license": "MIT",
   "author": "orokasan",
   "main": "lib/index.js",
@@ -26,6 +30,9 @@
     "singleQuote": false,
     "tabWidth": 4,
     "trailingComma": "none"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@textlint/types": "^13.3.0",
